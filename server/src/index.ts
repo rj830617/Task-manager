@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Used by hosting platforms (and uptime pingers) to check the service is alive
+app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
+
 app.use('/api/tasks', tasksRouter);
 
 // Unknown routes -> JSON 404 instead of Express's default HTML page

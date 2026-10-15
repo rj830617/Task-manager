@@ -1,6 +1,8 @@
 import type { Task, TaskFilters, TaskInput } from './types';
 
-const BASE = '/api/tasks';
+// In development the Vite proxy serves /api; in production set VITE_API_URL to the deployed API origin
+const API_ORIGIN = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') ?? '';
+const BASE = `${API_ORIGIN}/api/tasks`;
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...options });
