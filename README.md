@@ -3,6 +3,13 @@
 A task manager with a drag-and-drop Kanban board, search and filters, dark mode, and email reminders.
 Built with MongoDB, Express, React and Node, written in TypeScript on both the client and the server.
 
+## Live demo
+
+- **App:** https://task-manager-orpin-two-37.vercel.app
+- **API:** https://task-manager-kuo2.onrender.com (health check: `/api/health`)
+
+The client is hosted on Vercel, the API on Render, and the database on MongoDB Atlas. The API runs on Render's free tier, which sleeps after a period of inactivity, so the first request can take up to a minute to wake it.
+
 ## Features
 
 - Create, edit and delete tasks (title, description, status, priority, due date)
